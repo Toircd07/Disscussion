@@ -1,5 +1,5 @@
-tải thư mục project về
+tải thư mục Disscussion về lưu tên file là Disscussion luôn
 mở terminal trong vs code 
-nhập lệnh cd p sau đó ấn tab rồi ấn enter
+nhập lệnh cd D sau đó ấn tab rồi ấn enter
 nhập lệnh: g++ -Iinclude main.cpp funcion\*.cpp -o main   _sau đó enter
 nhập tiếp lệnh ./main sau đó enter
