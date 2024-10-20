@@ -1,0 +1,5 @@
+tải thư mục project về
+mở terminal trong vs code 
+nhập lệnh cd p sau đó ấn tab rồi ấn enter
+nhập lệnh: g++ -Iinclude main.cpp funcion\*.cpp -o main   _sau đó enter
+nhập tiếp lệnh ./main sau đó enter
