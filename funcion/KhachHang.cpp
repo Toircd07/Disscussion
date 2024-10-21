@@ -7,8 +7,8 @@
 using namespace std;
 
 KhachHang::KhachHang(){}
-KhachHang::KhachHang(string maCus, string tenCus, string soCus, string email, int diemTichLuy)
-    : maCus(maCus), tenCus(tenCus), soCus(soCus), email(email), diemTichLuy(diemTichLuy){};
+KhachHang::KhachHang(string maCus, string tenCus, string sdtCus, string email, int diemTichLuy)
+    : maCus(maCus), tenCus(tenCus), sdtCus(sdtCus), email(email), diemTichLuy(diemTichLuy){};
 
 void KhachHang::themCus(){
     cout << "Nhap ma khach hang: ";
@@ -17,21 +17,21 @@ void KhachHang::themCus(){
     cout << "Nhap ten khach hang: ";
         getline(cin, tenCus);
     cout << "Nhap so dien thoai: ";
-        getline(cin, soCus);
+        getline(cin, sdtCus);
     cout << "Nhap email: ";
         getline(cin, email);
     cout << "Nhap diem tich luy: ";
         cin >> diemTichLuy;
     cout << "Them khach hang thanh cong!" << endl;
-    KhachHang* cus = new KhachHang(maCus, tenCus, soCus, email, diemTichLuy);
-    danhSachCus.push_back(*cus);
+    KhachHang* cus = new KhachHang(maCus, tenCus, sdtCus, email, diemTichLuy);
+    dsCus.push_back(*cus);
 }
 void KhachHang::xoaCus(){
     cout << "Nhap ma khach hang can xoa: ";
        cin >> maCus;
-    for (int i = 0; i < danhSachCus.size(); i++){
-        if (danhSachCus[i].maCus == maCus){
-            danhSachCus.erase(danhSachCus.begin() + i);
+    for (int i = 0; i < dsCus.size(); i++){
+        if (dsCus[i].maCus == maCus){
+            dsCus.erase(dsCus.begin() + i);
             cout << "Xoa khach hang thanh cong!" << endl;
             return;
         }
@@ -42,16 +42,16 @@ void KhachHang::suaCus(){
     cout << "Nhap ma khach hang can sua: ";
        cin >> maCus;
     cin.ignore();
-    for (int i = 0; i < danhSachCus.size(); i++){
-        if (danhSachCus[i].maCus == maCus){
+    for (int i = 0; i < dsCus.size(); i++){
+        if (dsCus[i].maCus == maCus){
               cout << "Nhap ten khach hang: ";
-            getline(cin, danhSachCus[i].tenCus);
+            getline(cin, dsCus[i].tenCus);
               cout << "Nhap so dien thoai: ";
-            getline(cin, danhSachCus[i].soCus);
+            getline(cin, dsCus[i].sdtCus);
               cout << "Nhap email: ";
-            getline(cin, danhSachCus[i].email);
+            getline(cin, dsCus[i].email);
               cout << "Nhap diem tich luy: ";
-            cin >> danhSachCus[i].diemTichLuy;
+            cin >> dsCus[i].diemTichLuy;
               cout << "Sua khach hang thanh cong!" << endl;
             return;
         }
@@ -62,8 +62,8 @@ void KhachHang::timKiemCus(){
     string maCus;
     cout << "Nhap ma khach hang can tim: ";
     cin >> maCus;
-    for (int i = 0; i < danhSachCus.size(); i++){
-        if (danhSachCus[i].maCus == maCus){
+    for (int i = 0; i < dsCus.size(); i++){
+        if (dsCus[i].maCus == maCus){
              cout << "|  STT  |  Ma khach hang  |         Ten khach hang         |     So dien thoai     |             Email             |    Diem TL   |" << endl;
             hienThi(i);
             return;
@@ -81,24 +81,24 @@ void KhachHang::hienThi(const int& i){
             }else
                 break ;
         }
-    cout << "|     " << danhSachCus[i].maCus ;
-    for(int j=0; j<12-danhSachCus[i].maCus.length(); j++){
+    cout << "|     " << dsCus[i].maCus ;
+    for(int j=0; j<12-dsCus[i].maCus.length(); j++){
         cout << " ";
     }
-    cout << "|  " << danhSachCus[i].tenCus ;
-    for(int j=0; j<30-danhSachCus[i].tenCus.length(); j++){
+    cout << "|  " << dsCus[i].tenCus ;
+    for(int j=0; j<30-dsCus[i].tenCus.length(); j++){
         cout << " ";
     }
-    cout << "|      " << danhSachCus[i].soCus ;
-    for(int j=0; j<17-danhSachCus[i].soCus.length(); j++){
+    cout << "|      " << dsCus[i].sdtCus ;
+    for(int j=0; j<17-dsCus[i].sdtCus.length(); j++){
         cout << " ";
     }
-    cout << "|    " << danhSachCus[i].email ;
-    for(int j=0; j<27-danhSachCus[i].email.length(); j++){
+    cout << "|    " << dsCus[i].email ;
+    for(int j=0; j<27-dsCus[i].email.length(); j++){
         cout << " ";
     }
-    cout << "|    " << danhSachCus[i].diemTichLuy ;
-    for(int j=0; j<10-to_string(danhSachCus[i].diemTichLuy).length(); j++){
+    cout << "|    " << dsCus[i].diemTichLuy ;
+    for(int j=0; j<10-to_string(dsCus[i].diemTichLuy).length(); j++){
         cout << " ";
     }
     cout << "|" << endl;
@@ -106,18 +106,18 @@ void KhachHang::hienThi(const int& i){
     
 void KhachHang::hienThiDSCus(){
     cout << "|  STT  |  Ma khach hang  |         Ten khach hang         |     So dien thoai     |             Email             |    Diem TL   |" << endl;
-    for (int i = 0; i < danhSachCus.size(); i++){
+    for (int i = 0; i < dsCus.size(); i++){
         hienThi(i);
     }
 }
 void KhachHang::luuDSCus(){
     ofstream file("data/KhachHang.txt");
-    for (int i = 0; i < danhSachCus.size(); i++){
-        file << danhSachCus[i].maCus << ";";
-        file << danhSachCus[i].tenCus << ";";
-        file << danhSachCus[i].soCus << ";";
-        file << danhSachCus[i].email << ";";
-        file << danhSachCus[i].diemTichLuy << endl;
+    for (int i = 0; i < dsCus.size(); i++){
+        file << dsCus[i].maCus << ";";
+        file << dsCus[i].tenCus << ";";
+        file << dsCus[i].sdtCus << ";";
+        file << dsCus[i].email << ";";
+        file << dsCus[i].diemTichLuy << endl;
     }
     cout << "Luu danh sach khach hang thanh cong!" << endl;
     file.close();
@@ -128,13 +128,13 @@ void KhachHang::docDSCus(){
     while (file.good()){
         getline(file, maCus,';');
         getline(file, tenCus,';');
-        getline(file, soCus,';');
+        getline(file, sdtCus,';');
         getline(file, email,';');
         getline(file, diemTL,'\n');
      if(maCus != ""){
         int diemTichLuy = stoi(diemTL);
-        KhachHang kh(maCus, tenCus, soCus, email, diemTichLuy);
-        danhSachCus.push_back(kh);
+        KhachHang kh(maCus, tenCus, sdtCus, email, diemTichLuy);
+        dsCus.push_back(kh);
        }
     }
     cout << "Doc danh sach khach hang thanh cong!" << endl;

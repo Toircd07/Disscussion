@@ -8,13 +8,13 @@ class KhachHang{
     private:
         string maCus;
         string tenCus;
-        string soCus;
+        string sdtCus;
         string email;
         int diemTichLuy;
-        vector<KhachHang> danhSachCus;
+        vector<KhachHang> dsCus;
     public:
     KhachHang();
-    KhachHang(string maCus, string tenCus, string soCus, string email, int diemTichLuy);
+    KhachHang(string maCus, string tenCus, string sdtCus, string email, int diemTichLuy);
     void themCus();
     void xoaCus();
     void suaCus();

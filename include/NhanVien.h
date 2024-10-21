@@ -9,12 +9,12 @@ using namespace std;
 
 class NhanVien{
 private:
-    string maNhanVien , hoTen , caLamViec , soDienThoai , email;
-    vector<NhanVien> danhSachNhanVien;
+    string maNV , hoTen , caLamViec , soDT , email;
+    vector<NhanVien> listNV;
 
 public:
     NhanVien();
-    NhanVien(string maNhanVien, string hoTen, string caLamViec, string soDienThoai, string email);
+    NhanVien(string maNV, string hoTen, string caLamViec, string soDT, string email);
     void ThemNhanVien();
     void XoaNhanVien();
     void SuaNhanVien();
