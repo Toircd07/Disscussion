@@ -8,14 +8,14 @@ using namespace std;
 
 class SanPham{
     private:
-        string maSanPham,tenSanPham,HSD;
+        string maSP,tenSP,HSD;
         double giaBan;
         int soLuong;
-        vector<SanPham> danhSachSanPham;
+        vector<SanPham> listsp;
 
     public:
         SanPham();
-        SanPham(string maSanPham, string tenSanPham, string HSD ,double giaBan, int soLuong);
+        SanPham(string maSP, string tenSP, string HSD ,double giaBan, int soLuong);
         void themSanPham();
         void xoaSanPham();
         void suaSanPham();

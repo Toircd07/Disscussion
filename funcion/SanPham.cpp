@@ -8,14 +8,14 @@
 using namespace std;
 
 SanPham::SanPham(){}
-SanPham::SanPham(string maSanPham, string tenSanPham,string HSD, double giaBan, int soLuong)
-    : maSanPham(maSanPham), tenSanPham(tenSanPham), HSD(HSD) ,giaBan(giaBan), soLuong(soLuong){};
+SanPham::SanPham(string maSP, string tenSP,string HSD, double giaBan, int soLuong)
+    : maSP(maSP), tenSP(tenSP), HSD(HSD) ,giaBan(giaBan), soLuong(soLuong){};
 void SanPham::themSanPham(){
     cout << "Nhap ma san pham: ";
-    cin >> maSanPham;
+    cin >> maSP;
     cin.ignore();
     cout << "Nhap ten san pham: ";
-    getline(cin, tenSanPham);
+    getline(cin, tenSP);
     cout << "Nhap HSD: ";
     getline(cin, HSD);
     cout << "Nhap gia ban: ";
@@ -23,17 +23,17 @@ void SanPham::themSanPham(){
     cout << "Nhap so luong: ";
     cin >> soLuong;  
     cout << "Them san pham thanh cong!" << endl;
-    SanPham* sp = new SanPham(maSanPham, tenSanPham, HSD, giaBan, soLuong);
-    danhSachSanPham.push_back(*sp);
+    SanPham* sp = new SanPham(maSP, tenSP, HSD, giaBan, soLuong);
+    listsp.push_back(*sp);
 }
 
 void SanPham::xoaSanPham(){
-    string maSanPham;
+    string maSP;
     cout << "Nhap ma san pham can xoa: ";
-    cin >> maSanPham;
-    for (int i = 0; i < danhSachSanPham.size(); i++){
-        if (danhSachSanPham[i].maSanPham == maSanPham){
-            danhSachSanPham.erase(danhSachSanPham.begin() + i);
+    cin >> maSP;
+    for (int i = 0; i < listsp.size(); i++){
+        if (listsp[i].maSP == maSP){
+            listsp.erase(listsp.begin() + i);
             cout << "Xoa san pham thanh cong!" << endl;
             return;
         }
@@ -42,20 +42,20 @@ void SanPham::xoaSanPham(){
 }
 
 void SanPham::suaSanPham(){
-    string maSanPham;
+    string maSP;
     cout << "Nhap ma san pham can sua: ";
-    cin >> maSanPham;
+    cin >> maSP;
     cin.ignore();
-    for (int i = 0; i < danhSachSanPham.size(); i++){
-        if (danhSachSanPham[i].maSanPham == maSanPham){
+    for (int i = 0; i < listsp.size(); i++){
+        if (listsp[i].maSP == maSP){
             cout << "Nhap ten san pham: ";
-            getline(cin, danhSachSanPham[i].tenSanPham);
+            getline(cin, listsp[i].tenSP);
             cout << "Nhap HSD: ";
-            getline(cin, danhSachSanPham[i].HSD);
+            getline(cin, listsp[i].HSD);
             cout << "Nhap gia ban: ";
-            cin >> danhSachSanPham[i].giaBan;
+            cin >> listsp[i].giaBan;
             cout << "Nhap so luong: ";
-            cin >> danhSachSanPham[i].soLuong;
+            cin >> listsp[i].soLuong;
             cout << "Sua san pham thanh cong!" << endl;
             return;
         }
@@ -74,24 +74,24 @@ void SanPham::hienThi(const int& i){
             }else{
                 break ;}
         }
-        cout << "|      " << danhSachSanPham[i].maSanPham ;
-        for(int  j=0; j<11-danhSachSanPham[i].maSanPham.length(); j++){
+        cout << "|      " << listsp[i].maSP ;
+        for(int  j=0; j<11-listsp[i].maSP.length(); j++){
             cout << " ";
         }
-        cout << "|   " << danhSachSanPham[i].tenSanPham ;
-        for(int  j=0; j<33-danhSachSanPham[i].tenSanPham.length(); j++){
+        cout << "|   " << listsp[i].tenSP ;
+        for(int  j=0; j<33-listsp[i].tenSP.length(); j++){
             cout << " ";
         }
-        cout << "|   " << danhSachSanPham[i].HSD ;
-        for(int  j=0; j<12-danhSachSanPham[i].HSD.length(); j++){
+        cout << "|   " << listsp[i].HSD ;
+        for(int  j=0; j<12-listsp[i].HSD.length(); j++){
             cout << " ";
         }
-        cout << "|      "  << danhSachSanPham[i].giaBan ;
-        for(int  j=0; j<19-to_string(danhSachSanPham[i].giaBan).length(); j++){
+        cout << "|      "  << listsp[i].giaBan ;
+        for(int  j=0; j<19-to_string(listsp[i].giaBan).length(); j++){
             cout << " ";
         }
-        cout << "|    "  << danhSachSanPham[i].soLuong ;
-        for(int  j=0; j<10-to_string(danhSachSanPham[i].soLuong).length(); j++){
+        cout << "|    "  << listsp[i].soLuong ;
+        for(int  j=0; j<10-to_string(listsp[i].soLuong).length(); j++){
             cout << " ";
         }
         cout << "|" << endl;
@@ -100,19 +100,19 @@ void SanPham::hienThi(const int& i){
     }
 void SanPham::hienThiDanhSachSanPham(){
      cout << "|   STT   |   Ma san pham   |            Ten san pham            |      HSD      |    Gia ban(K)    |   So luong   |" << endl;
-    for (int i = 0; i < danhSachSanPham.size(); i++){
+    for (int i = 0; i < listsp.size(); i++){
         hienThi(i);
     }
 }
 
 void SanPham::timKiemSanPham(){
-    string maSanPham;
+    string maSP;
     cout << "Nhap ma san pham can tim: ";
-    cin >> maSanPham;
-    for (int i = 0; i < danhSachSanPham.size(); i++){
+    cin >> maSP;
+    for (int i = 0; i < listsp.size(); i++){
 
-        if (danhSachSanPham[i].maSanPham == maSanPham){
-        cout << "|  STT  |   Ma san pham   |            Ten san pham            |      HSD      |    Gia ban(k)    |   So luong   |" << endl;
+        if (listsp[i].maSP == maSP){
+        cout << "|   STT   |   Ma san pham   |            Ten san pham            |      HSD      |    Gia ban(K)    |   So luong   |" << endl;
             hienThi(i);
             return;
         }
@@ -121,12 +121,12 @@ void SanPham::timKiemSanPham(){
 }
 void SanPham::luuSanPham(){
     ofstream file("data/sanpham.txt");
-    for (int i = 0; i < danhSachSanPham.size(); i++){
-        file << danhSachSanPham[i].maSanPham << ";" ;
-        file << danhSachSanPham[i].tenSanPham << ";" ;
-        file << danhSachSanPham[i].HSD << ";" ;
-        file << danhSachSanPham[i].giaBan << ";" ;
-        file << danhSachSanPham[i].soLuong  << endl;
+    for (int i = 0; i < listsp.size(); i++){
+        file << listsp[i].maSP << ";" ;
+        file << listsp[i].tenSP << ";" ;
+        file << listsp[i].HSD << ";" ;
+        file << listsp[i].giaBan << ";" ;
+        file << listsp[i].soLuong  << endl;
     }
     cout << "Luu san pham thanh cong!" << endl;
     file.close();
@@ -135,16 +135,16 @@ void SanPham :: docSanPham(){
     ifstream file("data/sanpham.txt");
     string giaBanStr, soLuongStr;
     while (file.good()){
-        getline(file, maSanPham, ';');
-        getline(file, tenSanPham, ';');
+        getline(file, maSP, ';');
+        getline(file, tenSP, ';');
         getline(file, HSD, ';');
         getline(file, giaBanStr, ';');
         getline(file, soLuongStr, '\n');
-         if (maSanPham != ""){
+         if (maSP != ""){
             double giaBan = stod(giaBanStr);
             int soLuong = stoi(soLuongStr);
-            SanPham sp(maSanPham, tenSanPham,HSD, giaBan, soLuong);
-            danhSachSanPham.push_back(sp);
+            SanPham sp(maSP, tenSP,HSD, giaBan, soLuong);
+            listsp.push_back(sp);
         }
     }
     cout << "Doc san pham thanh cong!" << endl;
