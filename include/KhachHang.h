@@ -9,12 +9,13 @@ class KhachHang{
         string maCus;
         string tenCus;
         string sdtCus;
+        string diaChi;
         string email;
         int diemTichLuy;
         vector<KhachHang> dsCus;
     public:
     KhachHang();
-    KhachHang(string maCus, string tenCus, string sdtCus, string email, int diemTichLuy);
+    KhachHang(string maCus, string tenCus, string sdtCus,string diaChi, string email, int diemTichLuy);
     void themCus();
     void xoaCus();
     void suaCus();

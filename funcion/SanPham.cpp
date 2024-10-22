@@ -95,8 +95,6 @@ void SanPham::hienThi(const int& i){
             cout << " ";
         }
         cout << "|" << endl;
-
-
     }
 void SanPham::hienThiDanhSachSanPham(){
      cout << "|   STT   |   Ma san pham   |            Ten san pham            |      HSD      |    Gia ban(K)    |   So luong   |" << endl;
@@ -112,7 +110,7 @@ void SanPham::timKiemSanPham(){
     for (int i = 0; i < listsp.size(); i++){
 
         if (listsp[i].maSP == maSP){
-        cout << "|   STT   |   Ma san pham   |            Ten san pham            |      HSD      |    Gia ban(K)    |   So luong   |" << endl;
+                cout << "|   STT   |   Ma san pham   |            Ten san pham            |      HSD      |    Gia ban(K)    |   So luong   |" << endl;
             hienThi(i);
             return;
         }

@@ -9,13 +9,13 @@ void QLKHmenu() {
     int choice;
     kh.docDSCus();
     do {
-        cout << "1. Them khach hang"  << " | " 
-        << "2. Xoa khach hang" << " | " 
-        << "3. Sua khach hang" << " | " 
-        <<"4. Tim kiem khach hang" << " | " 
-        <<"5. Hien thi danh sach khach hang" << " | " 
-        <<"6. Luu danh sach khach hang" << " | " 
-        << "0. Thoat" << endl;
+        cout << "1. Them khach hang"  << endl;
+        cout << "2. Xoa khach hang" << endl;
+        cout << "3. Sua khach hang" << endl;
+        cout << "4. Hien thi danh sach khach hang" << endl;
+        cout << "5. Tim kiem khach hang" << endl;
+        cout << "6. Luu danh sach khach hang" << endl;
+        cout << "0. Thoat" << endl;
         cout << "Nhap lua chon: ";
         cin >> choice;
         switch (choice) {
@@ -29,10 +29,10 @@ void QLKHmenu() {
             kh.suaCus();
             break;
         case 4:
-            kh.timKiemCus();
+             kh.hienThiDSCus();
             break;
         case 5:
-            kh.hienThiDSCus();
+            kh.timKiemCus();
             break;
         case 6:
             kh.luuDSCus();

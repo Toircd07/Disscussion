@@ -1,19 +1,10 @@
-KH00005;Nguyen Van A;0934567890;nguyena@gmail.com;45
-KH00006;Tran Thi B;0981122334;tranb@gmail.com;55
-KH00007;Pham Van C;0912345678;phamc@gmail.com;75
-KH00008;Le Thi D;0908765432;led@gmail.com;20
-KH00009;Bui Van E;0923456789;buie@gmail.com;35
-KH00010;Nguyen Thi F;0937890123;nguyenf@gmail.com;50
-KH00011;Dang Van G;0965432109;dangv@gmail.com;65
-KH00012;Vo Thi H;0976543210;vothih@gmail.com;80
-KH00013;Hoang Van I;0943210987;hoangi@gmail.com;90
-KH00014;Vu Thi K;0954321098;vuk@gmail.com;10
-KH00015;Do Van M;0987654321;dom@gmail.com;25
-KH00016;Phan Thi N;0919876543;phantn@gmail.com;40
-KH00017;Ngo Van O;0934561234;ngovano@gmail.com;60
-KH00018;Trinh Thi P;0947654321;trinhp@gmail.com;85
-KH00019;Ha Van Q;0921987654;havq@gmail.com;15
-KH00020;Phung Thi R;0961234567;phungr@gmail.com;70
-KH00021;Cao Van S;0954321765;caovs@gmail.com;30
-KH00022;Vuong Thi T;0975432167;vuongt@gmail.com;55
-KH00024;Le Thi V;0912347890;lev@gmail.com;45
+KH00008;Le Thi D;0908765432;Thanh Hoa;led@gmail.com;20
+KH00009;Nguyen Van A;0909123456;Ha Noi;nva@gmail.com;25
+KH00010;Tran Thi B;0909345678;Hai Phong;ttb@gmail.com;30
+KH00011;Pham Van C;0909456789;Da Nang;pvc@gmail.com;35
+KH00012;Bui Thi D;0909567890;Hue;btd@gmail.com;40
+KH00013;Nguyen Van E;0909678901;Ninh Binh;nve@gmail.com;45
+KH00014;Le Thi F;0909789012;Ha Tinh;ltf@gmail.com;50
+KH00015;Tran Van G;0909890123;Quang Binh;tvg@gmail.com;55
+
+
