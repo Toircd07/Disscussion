@@ -10,19 +10,47 @@ KhachHang::KhachHang(){}
 KhachHang::KhachHang(string maCus, string tenCus, string sdtCus,string diaChi, string email, int diemTichLuy)
     : maCus(maCus), tenCus(tenCus), sdtCus(sdtCus),diaChi(diaChi), email(email), diemTichLuy(diemTichLuy){};
 
+
 // Hàm thêm khách hàng
 void KhachHang::themCus(){
     cout << "Nhap ma khach hang: ";
-       cin >> maCus;
-       cin.ignore();
+    cin.ignore();
+    do{
+        getline(cin, maCus);
+
+        if(maCus.empty()){
+            cout << "Ma khach hang khong duoc de trong . Vui long nhap lai: " ;
+        }
+    } while (maCus.empty());
     cout << "Nhap ten khach hang: ";
+    do{
         getline(cin, tenCus);
+        if(tenCus.empty()){
+            cout << "Ten khach hang khong duoc de trong . Vui long nhap lai: " ;
+        }
+    } while (tenCus.empty());
     cout << "Nhap so dien thoai: ";
+    do{
         getline(cin, sdtCus);
+        if(sdtCus.empty()){
+            cout << "So dien thoai khong duoc de trong . Vui long nhap lai: " ;
+        }
+    } while (sdtCus.empty());
     cout << "Nhap dia chi: ";
+    do{
         getline(cin, diaChi);
+        if(diaChi.empty()){
+            cout << "Dia chi khong duoc de trong . Vui long nhap lai: " ;
+        }
+    } while (diaChi.empty());
+
     cout << "Nhap email: ";
+    do{
         getline(cin, email);
+        if(email.empty()){
+            cout << "Email khong duoc de trong . Vui long nhap lai: " ;
+        }
+    } while (email.empty());
     cout << "Nhap diem tich luy: ";
         cin >> diemTichLuy;
     cout << "Them khach hang thanh cong!" << endl;
@@ -35,14 +63,15 @@ void KhachHang::xoaCus(){
        cin >> maCus;
     for (int i = 0; i < dsCus.size(); i++){
         if (dsCus[i].maCus == maCus){
-            dsCus.erase(dsCus.begin() + i);
-            cout << "Xoa khach hang thanh cong!" << endl;
-            return;
+              dsCus.erase(dsCus.begin() + i);
+                   cout << "Xoa khach hang thanh cong!" << endl;
+              return;
         }
     }
     cout << "Khong tim thay khach hang!" << endl;
 }
 // Hàm sửa khách hàng
+//Sử dụng phương thức empty() của đối tượng string để kiểm tra xem chuỗi có rỗng hay không.
 void KhachHang::suaCus(){
     cout << "Nhap ma khach hang can sua: ";
        cin >> maCus;
@@ -50,13 +79,34 @@ void KhachHang::suaCus(){
     for (int i = 0; i < dsCus.size(); i++){
         if (dsCus[i].maCus == maCus){
               cout << "Nhap ten khach hang: ";
-            getline(cin, dsCus[i].tenCus);
+              // neu nhap vao xau rong , bat buoc nhap lai
+            do{
+                getline(cin, dsCus[i].tenCus);
+                if(dsCus[i].tenCus.empty()){
+                   cout << "Ten khach hang khong duoc de trong . Vui long nhap lai: " ;
+                }
+            } while (dsCus[i].tenCus.empty());
               cout << "Nhap so dien thoai: ";
-            getline(cin, dsCus[i].sdtCus);
-              cout << "Nhap dia chi: ";
+            do{
+               getline(cin, dsCus[i].sdtCus);
+               if(dsCus[i].sdtCus.empty()){
+                   cout << "So dien thoai khong duoc de trong . Vui long nhap lai: " ;
+               }
+            } while (dsCus[i].sdtCus.empty());
+               cout << "Nhap dia chi: ";
+            do{
             getline(cin, dsCus[i].diaChi);
+            if(dsCus[i].diaChi.empty()){
+                   cout << "Dia chi khong duoc de trong . Vui long nhap lai: " ;
+            }
+            } while (dsCus[i].diaChi.empty());
               cout << "Nhap email: ";
+            do{
             getline(cin, dsCus[i].email);
+            if(dsCus[i].email.empty()){
+                   cout << "Email khong duoc de trong . Vui long nhap lai: " ;
+            }
+            } while (dsCus[i].email.empty());
               cout << "Nhap diem tich luy: ";
             cin >> dsCus[i].diemTichLuy;
               cout << "Sua khach hang thanh cong!" << endl;
@@ -89,35 +139,35 @@ void KhachHang::hienThi(const int& i){
             }else
                 break ;
         }
-    cout << "| " << dsCus[i].maCus ;
-    for(int j=0; j<16-dsCus[i].maCus.length(); j++){
+    cout << "|   " << dsCus[i].maCus ;
+    for(int j=0; j<14-dsCus[i].maCus.length(); j++){
         cout << " ";
     }
-    cout << "| " << dsCus[i].tenCus ;
-    for(int j=0; j<31-dsCus[i].tenCus.length(); j++){
+    cout << "|   " << dsCus[i].tenCus ;
+    for(int j=0; j<29-dsCus[i].tenCus.length(); j++){
         cout << " ";
     }
-    cout << "| " << dsCus[i].sdtCus ;
-    for(int j=0; j<22-dsCus[i].sdtCus.length(); j++){
+    cout << "|     " << dsCus[i].sdtCus ;
+    for(int j=0; j<18-dsCus[i].sdtCus.length(); j++){
         cout << " ";
     }
-    cout << "| " << dsCus[i].diaChi ;
-    for(int j=0; j<26-dsCus[i].diaChi.length(); j++){
+    cout << "|   " << dsCus[i].diaChi ;
+    for(int j=0; j<24-dsCus[i].diaChi.length(); j++){
         cout << " ";
     }
-    cout << "| " << dsCus[i].email ;
-    for(int j=0; j<27-dsCus[i].email.length(); j++){
+    cout << "|   " << dsCus[i].email ;
+    for(int j=0; j<29-dsCus[i].email.length(); j++){
         cout << " ";
     }
-    cout << "| " << dsCus[i].diemTichLuy ;
-    for(int j=0; j<13-to_string(dsCus[i].diemTichLuy).length(); j++){
+    cout << "|    " << dsCus[i].diemTichLuy ;
+    for(int j=0; j<11-to_string(dsCus[i].diemTichLuy).length(); j++){
         cout << " ";
     }
     cout << "|" << endl;
 }
 // Hàm hiển thị danh sách khách hàng
 void KhachHang::hienThiDSCus(){
-    cout << "|  STT  |  Ma khach hang  |         Ten khach hang         |     So dien thoai     |           Dia chi          |             Email             |    Diem TL   |" << endl;
+    cout << "|  STT  |  Ma khach hang  |         Ten khach hang         |     So dien thoai     |           Dia chi         |             Email              |     Diem TL   |" << endl;
     for (int i = 0; i < dsCus.size(); i++){
         hienThi(i);
     }

@@ -24,6 +24,7 @@ class KhachHang{
     void hienThiDSCus();
     void luuDSCus();
     void docDSCus();
+   
 };   
 
 #endif
