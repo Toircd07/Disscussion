@@ -73,7 +73,7 @@ void NhanVien::TimKiemNhanVien(){
     }
     cout << "Khong tim thay nhan vien!" << endl;
 }
-// đã fix hiển thị
+
 void NhanVien::HienThi(const int& i) {
     cout <<"| " << i+1 ;
     int dem =0 ;
@@ -113,7 +113,7 @@ void NhanVien::HienThiDanhSachNhanVien(){
         HienThi(i);
     }
 }
-// đã fix lưu dữ liệu vào file
+
 void NhanVien::LuuDSNhanVien(){
     ofstream file("data/nhanvien.txt");
     for(int i = 0; i < listNV.size(); i++){
@@ -126,7 +126,7 @@ void NhanVien::LuuDSNhanVien(){
     cout << "Luu file thanh cong!" << endl;
     file.close();
 }
-//đã fix lỗi dữ liệu có sẵn trong file
+
 void NhanVien::DocDSNhanVien(){
     ifstream file("data/nhanvien.txt");
      if (!file.is_open()) {

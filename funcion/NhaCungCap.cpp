@@ -24,7 +24,9 @@ void NhaCungCap::themNCC(){
     cin >> giaSanPham;
     cout << "Nhap so dien thoai: ";
     cin >> soDienThoai;
-    cout << "Them nha cung cap thanh cong!" << endl;
+            cout <<"                        "<<"================================= " << endl;
+            cout <<"                        "<<"[ Them nha cung cap thanh cong! ] " << endl;
+            cout <<"                        "<<"================================= " << endl;    
     NhaCungCap* ncc = new NhaCungCap(maNCC, tenNCC, tenSpNhap, soLuong, giaSanPham, soDienThoai);
     listNCC.push_back(*ncc);
 }
@@ -35,11 +37,15 @@ void NhaCungCap::xoaNCC(){
     for (int i = 0; i < listNCC.size(); i++){
         if (listNCC[i].maNCC == maNCC){
             listNCC.erase(listNCC.begin() + i);
-            cout << "Xoa nha cung cap thanh cong!" << endl;
+            cout <<"                        "<<"================================ " << endl;
+            cout <<"                        "<<"[ Xoa nha cung cap thanh cong! ] " << endl;
+            cout <<"                        "<<"================================ " << endl;
             return;
         }
     }
-    cout << "Khong tim thay nha cung cap!" << endl;
+    cout <<"                        "<<"================================ " << endl;
+    cout <<"                        "<<"[ Khong tim thay nha cung cap! ] " << endl;
+    cout <<"                        "<<"================================ " << endl;
 }
 
 void NhaCungCap::suaNCC(){
@@ -59,11 +65,15 @@ void NhaCungCap::suaNCC(){
             cin >> listNCC[i].giaSanPham;
             cout << "Nhap so dien thoai: ";
             getline(cin,  listNCC[i].soDienThoai);
-            cout << "Sua nha cung cap thanh cong!" << endl;
+            cout <<"                        "<<"================================ " << endl;
+            cout <<"                        "<<"[ Sua nha cung cap thanh cong! ] " << endl;
+            cout <<"                        "<<"================================ " << endl;
             return;
         }
     }
-    cout << "Khong tim thay nha cung cap!" << endl;
+    cout <<"                        "<<"================================ " << endl;
+    cout <<"                        "<<"[ Khong tim thay nha cung cap! ] " << endl;
+    cout <<"                        "<<"================================ " << endl;
 }
 void NhaCungCap :: hienThi(const int &i){
     cout << "|  " << i+1 ;
@@ -103,6 +113,12 @@ void NhaCungCap :: hienThi(const int &i){
 
 }
 void NhaCungCap::hienThidanhsachNCC(){
+    cout <<"                                                        "<< "========================== " << endl;
+    cout <<"                                                        "<< "[ Danh sach nha cung cap ] " << endl;
+    cout <<"                                                        "<< "========================== " << endl;
+    cout <<"                                                        "<< "                           " << endl;
+    cout <<"                                                        "<< "                           " << endl;
+
     cout << "|   STT   |   Ma nha cung cap   |          Ten nha cung cap          |      Ten san pham nhap       |    So luong    |   Gia san pham   |   So dien thoai   |" << endl;
     for (int i = 0; i < listNCC.size(); i++){
         hienThi(i);
@@ -119,7 +135,9 @@ void NhaCungCap::timKiemNCC(){
             return;
         }
     }
-    cout << "Khong tim thay nha cung cap!" << endl;
+    cout <<"                            "<<"================================ " << endl;
+    cout <<"                            "<<"[ Khong tim thay nha cung cap! ] " << endl;
+    cout <<"                            "<<"================================ " << endl;
 }
 
 void NhaCungCap::luuNCC(){
@@ -132,10 +150,12 @@ void NhaCungCap::luuNCC(){
         file << listNCC[i].giaSanPham << ";" ;
         file << listNCC[i].soDienThoai << endl;
     }
-    cout << "Luu danh sach nha cung cap thanh cong!" << endl;
+    cout << "                       " <<"========================================== " << endl;
+    cout << "                       " <<"[ Luu danh sach nha cung cap thanh cong! ] " << endl;
+    cout << "                       " <<"========================================== " << endl;
     file.close();
 }
-// lỗi string sdt không đọc được 0 đầu tiên
+
 void NhaCungCap::docNCC(){
     ifstream file("data/nhacungcap.txt");
     string  giaSanPhamStr;
@@ -153,6 +173,8 @@ void NhaCungCap::docNCC(){
             listNCC.push_back(ncc);
         }
     }
-    cout << "Doc danh sach nha cung cap thanh cong!" << endl;
+    cout << "                       "<<"========================================== " << endl;
+    cout << "                       "<<"[ Doc danh sach nha cung cap thanh cong! ] " << endl;
+    cout << "                       "<<"========================================== " << endl;   
     file.close();
 }

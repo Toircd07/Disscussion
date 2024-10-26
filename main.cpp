@@ -11,15 +11,15 @@ using namespace std;
 int main(){
     int luaChon;
     do{
-        cout << "--------------------------------" << endl;
-        cout << "| Xin chao hay chon chuc nang! |"<<endl;
-        cout << "--------------------------------" << endl;
-        cout<<"1. Quan ly san pham"<<endl;
-        cout<<"2. Quan ly nhan vien"<<endl;
-        cout<<"3. Quan ly khach hang"<<endl;
-        cout<<"4. Quan ly nha cung cap" << endl;
-        cout<<"0. Thoat"<<endl;
-        cout<<"Nhap lua chon: ";
+        cout <<"                            " << "--------------------------------" <<endl;
+        cout <<"                            " << "| Xin chao hay chon chuc nang! |" <<endl;
+        cout <<"                            " << "--------------------------------" <<endl;
+        cout <<"                                  " <<"1. Quan ly san pham"      <<endl;
+        cout <<"                                  " <<"2. Quan ly nhan vien"     <<endl;
+        cout <<"                                  " <<"3. Quan ly khach hang"    <<endl;
+        cout <<"                                  " <<"4. Quan ly nha cung cap"  <<endl;
+        cout <<"                                  " <<"0. Thoat"                 <<endl;
+        cout <<"                                  " <<"Nhap lua chon: ";
         cin >> luaChon;
         switch(luaChon){
             case 1:
@@ -35,10 +35,14 @@ int main(){
                 QLNCCMenu();
                 break;
             case 0:
-                cout<<"Ket thuc chuong trinh"<<endl;
+                cout <<"                    " << "-------------------------" << endl;
+                cout <<"                    " << "| Ket thuc chuong trinh |" << endl;
+                cout <<"                    " << "-------------------------" << endl;
                 break;
             default:
-                cout<<"Lua chon khong hop le"<<endl;
+                cout <<"                    " << "-------------------------" << endl;
+                cout <<"                    " << "| Lua chon khong hop le |" << endl;
+                cout <<"                    " << "-------------------------" << endl;
                 break;
 
         }

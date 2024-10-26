@@ -1,30 +1,35 @@
-#ifndef SANPHAM_H
-#define SANPHAM_H
+#ifndef SANPHAM_H // kiem tra xem file SanPham.h da duoc dinh nghia chua
+#define SANPHAM_H // dinh nghia file SanPham.h
 
 #include <string>
 #include <vector>
 
 using namespace std;
 
+// tao ra 1 class SanPham de quan ly cac chuc nang cua san pham
+/* cac thuoc tinh cua san pham duoc 
+khai bao private de chi co the truy cap tu ben trong class */
 class SanPham{
     private:
-        string maSP,tenSP,HSD;
-        double giaBan;
-        int soLuong;
-        vector<SanPham> listsp;
+        string maSP,tenSP,HSD;                  // cac thuoc tinh cua san pham  : ma , ten , hsd                             
+        double giaBan;                         // gia ban
+        int soLuong;                          // so luong                           
+        vector<SanPham> listsp;              // tao ra 1 vector de luu tru cac san pham
 
+ // cac phuong thuc cua class duoc khai boa public de co the truy cap tu ben ngoai class                                            
     public:
-        SanPham();
-        SanPham(string maSP, string tenSP, string HSD ,double giaBan, int soLuong);
-        void themSanPham();
+        SanPham();                          // ham khoi tao mac dinh : cho phep tao doi tuong ma ko can cung cap gia tri ban dau cho cac thuoc tinh doi tuong
+        SanPham(string maSP, string tenSP, string HSD ,double giaBan, int soLuong); // ham khoi tao co tham so
+        void themSanPham();                  /*cac ham them , sua , xoa , hien thi , tim kiem . luu dssp vao tep txt , doc dssp trong tep txt*/
         void xoaSanPham();
         void suaSanPham();
         void hienThiDanhSachSanPham();
         void timKiemSanPham();
-        void luuSanPham();
+        void luuSanPham();                 
         void docSanPham();
-        void hienThi(const int& i);
+        void hienThi(const int& i);        // ham hien thi thong tin cua san pham tai vi tri i
 
 };
 
-#endif // SANPHAM_H
+#endif   // ket thuc file SanPham.h
+
